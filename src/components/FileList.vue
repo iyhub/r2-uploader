@@ -124,7 +124,6 @@
 
             <div
                 class="actions w-[5rem] shrink-0 text-right"
-                v-show="!selectMode"
             >
               <button
                   style="border: none; padding: 0.2rem 0.3rem"
