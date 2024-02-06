@@ -119,6 +119,16 @@
                 :disabled="deletingKey === item.key"
                 >Delete
               </button>
+
+
+              <button
+                  style="border: none; padding: 0.2rem 0.3rem"
+                  class="w-auto inline-block outline text-xs text-red-500 mb-0"
+                  @click="copyUrl((customDomain ? customDomain : endPoint) + item.key)"
+                  :aria-busy="deletingKey === item.key"
+                  :disabled="deletingKey === item.key"
+              >Copy
+              </button>
             </div>
           </div>
         </div>
@@ -238,6 +248,15 @@ let parseByteSize = function (size) {
 
 let fileList = ref([])
 let loading = ref(false)
+
+async function copyUrl(text){
+  try{
+    await navigator.clipboard.writeText(text);
+  }catch (e){
+    console.log(e)
+  }
+}  
+  
 
 function handleFolderSelect(folder) {
   let files = dirMap.value[folder]
