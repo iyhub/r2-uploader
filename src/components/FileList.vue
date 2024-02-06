@@ -120,7 +120,12 @@
                 >Delete
               </button>
 
+            </div>
 
+            <div
+                class="actions w-[5rem] shrink-0 text-right"
+                v-show="!selectMode"
+            >
               <button
                   style="border: none; padding: 0.2rem 0.3rem"
                   class="w-auto inline-block outline text-xs text-red-500 mb-0"
@@ -130,6 +135,8 @@
               >Copy
               </button>
             </div>
+
+
           </div>
         </div>
       </div>
